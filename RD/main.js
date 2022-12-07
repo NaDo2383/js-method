@@ -131,7 +131,18 @@ function getRegisterInfo(register) {
                         }
                     }
                     if(a!=""){
-                        console.log("Tanii oruulsan RD tai hun", register.slice(2,4), "onii", register.slice(4,6), "dugaar sariin", register.slice(6,8),"udur", a, "bused tursun", b );
+                        if(register.slice(6,8)>0 && register.slice(6,8)<=31){
+                            if(register.slice(4,6)>0 && register.slice(4,6)<=12){
+                                console.log("Tanii oruulsan RD tai hun", register.slice(2,4), "onii", register.slice(4,6), "dugaar sariin", register.slice(6,8),"udur", a, "bused tursun", b );
+                            }else if (register.slice(4,6)>=21 && register.slice(4,6)<=32){
+                                console.log("Tanii oruulsan RD tai hun", register.slice(2,4), "onii", register.slice(4,6)-20, "dugaar sariin", register.slice(6,8),"udur", a, "bused tursun", b );
+                            }else {
+                                console.log("Tanii oruulsan RD buruu baina");        
+                            }
+                        }else {
+                            console.log("Tanii oruulsan RD buruu baina");        
+                        }
+                        
                     } else {
                         console.log("Tanii oruulsan RD buruu baina");        
                     }
